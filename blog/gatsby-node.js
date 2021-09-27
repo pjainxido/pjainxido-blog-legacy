@@ -1,72 +1,88 @@
-/* Vendor imports */
-const path = require('path');
-/* App imports */
-const config = require('./config');
-const utils = require('./src/utils/pageUtils');
+const path = require(`path`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
+const _ = require("lodash")
 
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
+}
 
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
   return graphql(`
     {
-      allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+      allMarkdownRemark {
         edges {
           node {
             frontmatter {
-              path
               tags
             }
-            fileAbsolutePath
+            fields {
+              slug
+            }
           }
         }
       }
-    }    
-  `).then((result) => {
-    if (result.errors) return Promise.reject(result.errors);
+    }
+  `).then(result => {
 
-    const { allMarkdownRemark } = result.data;
+        const posts = result.data.allMarkdownRemark.edges
+        posts.forEach(({ node }) => {
+          createPage({
+            path: node.fields.slug,
+            component: path.resolve(`./src/templates/blog-post.js`),
+            context: {
+              // Data passed to context is available
+              // in page queries as GraphQL variables.
+              slug: node.fields.slug,
+            },
+          })
+        })
 
-    /* Post pages */
-    allMarkdownRemark.edges.forEach(({ node }) => {
-      // Check path prefix of post
-      if (node.frontmatter.path.indexOf(config.pages.blog) !== 0) {
-        // eslint-disable-next-line no-throw-literal
-        throw `Invalid path prefix: ${node.frontmatter.path}`;
-      }
+        // Tag pages:
+        let tags = []
+        // Iterate through each post, putting all found tags into `tags`
+        _.each(posts, edge => {
+          if (_.get(edge, "node.frontmatter.tags")) {
+            tags = tags.concat(edge.node.frontmatter.tags)
+          }
+        })
 
-      createPage({
-        path: node.frontmatter.path,
-        component: path.resolve('src/templates/post/post.jsx'),
-        context: {
-          postPath: node.frontmatter.path,
-          translations: utils.getRelatedTranslations(node, allMarkdownRemark.edges),
-        },
-      });
-    });
-    const regexForIndex = /index\.md$/;
-    // Posts in default language, excluded the translated versions
-    const defaultPosts = allMarkdownRemark.edges
-      .filter(({ node: { fileAbsolutePath } }) => fileAbsolutePath.match(regexForIndex));
+        // Eliminate duplicate tags
+        tags = _.uniq(tags)
 
-    /* Tag pages */
-    const allTags = [];
-    defaultPosts.forEach(({ node }) => {
-      node.frontmatter.tags.forEach((tag) => {
-        if (allTags.indexOf(tag) === -1) allTags.push(tag);
-      });
-    });
+        // Make tag pages
+        tags.forEach(tag => {
+          createPage({
+            path: `/tags/${_.kebabCase(tag)}/`,
+            component: path.resolve("src/templates/tag.js"),
+            context: {
+              tag,
+            },
+          })
+        })
 
-    allTags
-      .forEach((tag) => {
-        createPage({
-          path: utils.resolvePageUrl(config.pages.tag, tag),
-          component: path.resolve('src/templates/tags/index.jsx'),
-          context: {
-            tag,
-          },
-        });
-      });
+        const postsPerPage = 3
+        const numPages = Math.ceil(posts.length / postsPerPage)
 
-    return 1;
-  });
-};
+        Array.from({ length: numPages }).forEach((_, i) => {
+          createPage({
+            path: i === 0 ? `/` : `/${i+1}`,
+            component: path.resolve("./src/templates/post-list.js"),
+            context: {
+              limit: postsPerPage,
+              skip: i*postsPerPage, 
+              numPages,
+              currentPage: i+1
+            }
+          })
+        })
+    })
+}
