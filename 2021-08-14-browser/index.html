@@ -32,7 +32,38 @@
 <p>크롬은 blink, 파이어 폭스는 gechko, 사파리는 webkit 엔진을 사용한다.</p>
 <h3>렌더링 엔진 동작 과정</h3>
 <p>렌더링 엔진이 html 파일을 받았을때 동작하는 과정을 간략하게 알아보자.</p>
-<p><img src="/postimgs/8_14/render-flow.png" alt="render-flow"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/174a5c355d90e09875e9f53cccef5806/0a47e/render-flow.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 10%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAArUlEQVQI1wGiAF3/AMjU4fPR193109nf/8fV5bUYXsYTxtXomNLY4P/R197119/o85i230KTsttC09vk8tLY3/XT2eH/xdTnlypryhXI1uaz1Nrg/9DW3PTN2efzANXb4fzY1tT+3t3a/9Tc58Rqldg21N/uqOrq6P/p5+X+7e7v/J+64WCfuuJd7u/w+ujm5f/t7ev/1eDvqmeS1Djc5fDA7evp/+nn5f7j6O/8DhaBMOUlsLoAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="render-flow"
+        title="render-flow"
+        src="/static/174a5c355d90e09875e9f53cccef5806/772e8/render-flow.png"
+        srcset="/static/174a5c355d90e09875e9f53cccef5806/a1812/render-flow.png 50w,
+/static/174a5c355d90e09875e9f53cccef5806/7e516/render-flow.png 100w,
+/static/174a5c355d90e09875e9f53cccef5806/772e8/render-flow.png 200w,
+/static/174a5c355d90e09875e9f53cccef5806/5a46d/render-flow.png 300w,
+/static/174a5c355d90e09875e9f53cccef5806/e17e5/render-flow.png 400w,
+/static/174a5c355d90e09875e9f53cccef5806/0a47e/render-flow.png 600w"
+        sizes="(max-width: 200px) 100vw, 200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
 <ol>
 <li>Html 파싱 후 돔 트리 구축</li>
 <li>Render tree 구축</li>
@@ -51,7 +82,38 @@
 만약 색이 바뀌거나 노드의 스타일이 변경된다면 layout을 거치지 않고 paint만 발생한다.</p>
 <p>위 과정들을 점진적으로 진행되는데, 렌더링 엔진은 가능하면 빠르게 화면에 표시하기 위해 모든 html을 파싱할 때까지 기다리지 않고 배치(layout)와 그리기(paint)과정을 시작한다.
 네트워크로 부터 아직 전송되지 않은 값을 기다리는 동시에 받은 내용의 일부를 먼저 화면에 표시하기 위함이다.</p>
-<p><img src="/postimgs/8_14/webkit_flow.png" alt="webkit-flow">
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b2b7c07bd7f5af231cdeaa0c3804a686/39c09/webkit_flow.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAACs0lEQVQoz22SW0iTARTH//s2Me3BvJColVZQ4kNPQUF0oYeCCiIIu9hDBQW9ZSR0sR7EFZqB7L6cc2xutc3rnHc33cXNbZ9u+7Z9m87b1KZmuBLKeoivzdc68Hs5B34HzvkjFCLY4RDYtWolS2SwcBiGQXFxaSafq2qRvW9jeFylFEB6sk+IjWMckckHiTmFF/8tmmYhTANJIVTOIFpcIVQ8aMBvxoXqp7qLZMyO+9dfQOVOzqweiEx+iJNCaVJ44k7dP4CiiOpQAK+4GsUZudUvlJjIChys3dXr7K7qdujFZm/vo9RipTPwrnUi0C8YIkvEpiloyBmO1jfPbuwxYmMznUhs7WavrOcQiEYJ80wY8lpNe7nM7P4mHiHruHLVUau30z/iVK9NhIyVYwETZLZgg3QsMMztm89rHPCii16E1jsPQZ8eXxNpSGxl4POXPcD2NhAOA8J+DVL3s8ZXofX4i5osgRsNvb6HPFOkDMdUnA9tzaeFWkW53d9R+vKjK/fTVPRKqzt6gWfUZ8fXM0+tbmRdjcXzjiclYP/5AfZbnYLw/fyVpnCE0GTx31TYvIzS4WPk9pCUr9NcMpEdzCjZxhgd3VWVzfbLrRN+Rmahvov6JLfia+zp+cV0Znkt25YS7lDTKoCBjkFNRneedVdC770nnDzyemAzfXSyI9c81VPaOaY/JFpkUN9LcZrH6SKZjSo4+5whgrMFObMr+/aT9OEsuKkDXZPB/FGBof62YjxMtdgpVbVUU2bxdgybPfo5e7D/yXLCii5rO7otOpjdWtQZKbQ4I5CPB3HtDYPIQj4W4oXwTZcAsSUOMz2bMcc38M6JBt0f+IMTj1VDhvMmT7vBaFF3WgLDJ10zZoyQBk6PTUcMu7tQ0z6VjFGEpXDSrGfKIBZWslhLa3msyEIh6y8kYoDYWPUOEgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="webkit-flow"
+        title="webkit-flow"
+        src="/static/b2b7c07bd7f5af231cdeaa0c3804a686/772e8/webkit_flow.png"
+        srcset="/static/b2b7c07bd7f5af231cdeaa0c3804a686/a1812/webkit_flow.png 50w,
+/static/b2b7c07bd7f5af231cdeaa0c3804a686/7e516/webkit_flow.png 100w,
+/static/b2b7c07bd7f5af231cdeaa0c3804a686/772e8/webkit_flow.png 200w,
+/static/b2b7c07bd7f5af231cdeaa0c3804a686/5a46d/webkit_flow.png 300w,
+/static/b2b7c07bd7f5af231cdeaa0c3804a686/e17e5/webkit_flow.png 400w,
+/static/b2b7c07bd7f5af231cdeaa0c3804a686/39c09/webkit_flow.png 624w"
+        sizes="(max-width: 200px) 100vw, 200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span>
 (webkit 렌더링 엔진 flow chart)</p>
 <h3>Js in browser</h3>
 <p>반면 JS는 렌더링 엔진이 아닌, JS엔진에서 처리한다.</p>
