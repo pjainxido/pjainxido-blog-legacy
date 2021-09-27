@@ -18,11 +18,7 @@ const Sidebar = () => {
                             tagline
                             author
                             contacts {
-                                linkedin
                                 github
-                                stackoverflow
-                                freecodecamp
-                                twitter
                             }
                             labels {
                                 tag
