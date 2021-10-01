@@ -4,7 +4,7 @@ title: TIL - Performance check
 cover-img: /assets/img/path.jpg
 tags: [til, wecode, FE, js, web,console.time, performance]
 published: true
-date: '2021-09-04'
+date: '2021-08-17'
 ---
 
 ## 함수 성능 측정
