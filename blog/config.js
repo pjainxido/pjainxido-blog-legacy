@@ -3,7 +3,7 @@
 module.exports = {
   url: "https://pjainxido.github.io",
   title: "Dev Log",
-  tagline: "Autodidact developer and sometimes hoop-jumper",
+  tagline: "Front-end Developer",
   copyright: "© 2019 willjw3, All rights reserved",
   author: {
     name: "Pjainxido",
