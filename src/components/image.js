@@ -19,8 +19,11 @@ const Image = () => (
       query {
         placeholderImage: file(relativePath: { eq: "gatsby-icon.png" }) {
           childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
+            fluid(
+              maxWidth: 1920
+              srcSetBreakpoints: [360, 600, 960, 1280, 1920]
+            ) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
