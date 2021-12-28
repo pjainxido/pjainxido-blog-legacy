@@ -1,11 +1,5 @@
 import React from "react"
-import {
-  FaLinkedin,
-  FaGithubSquare,
-  FaStackOverflow,
-  FaFreeCodeCamp,
-  FaTwitterSquare,
-} from "react-icons/fa"
+import { FaGithubSquare } from "react-icons/fa"
 import "./sidebar.css"
 
 const SocialLinks = ({ contacts }) => {
