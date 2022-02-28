@@ -2,7 +2,7 @@
 layout: post
 title: Next.js link options
 tags: [next, link]
-published:false 
+published: false 
 date: "2022-02-17"
 ---
 
