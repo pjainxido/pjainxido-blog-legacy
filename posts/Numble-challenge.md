@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Numble Challenge  
-tags: [next, link]
+tags: [numble, react, useReducer, typescript]
 published: true 
 date: "2022-02-28"
 ---
