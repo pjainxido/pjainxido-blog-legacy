@@ -9,7 +9,7 @@ p, .title {
 } 
 
 .sidebar {
-    width: 90%;
+  max-width: 262px;
 }
 
 

@@ -2,7 +2,7 @@
 
 module.exports = {
   url: "https://pjainxido.github.io",
-  title: "Dev Log",
+  title: "수상한 블로그",
   tagline: "Front-end Developer",
   copyright: "© 2019 willjw3, All rights reserved",
   author: {
