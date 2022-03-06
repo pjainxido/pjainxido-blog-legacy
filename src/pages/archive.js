@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import "bootstrap/dist/css/bootstrap.css"
 import "./index.css"
+import { getTimeDiff } from '../utils'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -60,7 +61,7 @@ const ArchivePage = ({ data }) => {
                   <h2 className="title">{post.node.frontmatter.title}</h2>
                 </Link>
                 <small className="d-block text-info">
-                  <i>Posted on {post.node.frontmatter.date}</i>
+                  <i> {getTimeDiff(post.node.frontmatter.date)}</i>
                 </small>
                 <p className="mt-3 d-inline">{post.node.excerpt}</p>
                 <Link to={post.node.fields.slug} className="text-primary">
