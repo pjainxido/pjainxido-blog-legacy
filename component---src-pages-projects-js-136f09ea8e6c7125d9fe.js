@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_developer_diary=self.webpackChunkgatsby_starter_developer_diary||[]).push([[853],{7744:function(e,t,r){r.r(t);var a=r(7294),n=r(1728),s=r(6179);t.default=function(){return a.createElement(n.Z,null,a.createElement(s.Z,{title:"Pjainxido Project's"}),a.createElement("img",{src:"https://http.cat/404"}))}}}]);
+//# sourceMappingURL=component---src-pages-projects-js-136f09ea8e6c7125d9fe.js.map
