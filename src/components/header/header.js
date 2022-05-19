@@ -14,7 +14,7 @@ const Header = ({ siteTitle, tagline, author, contacts }) => {
       className="head-main"
       style={{
         backgroundColor: "#F4D03F",
-        backgroundImage: "linear-gradient(132deg, #F4D03F 0%, #16A085 100%)",
+        backgroundImage: "linear-gradient(170deg, rgb(244, 208, 63) 0%, rgb(22, 160, 133) 100%)",
       }}
     >
       <div

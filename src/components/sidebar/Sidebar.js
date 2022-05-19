@@ -3,7 +3,6 @@ import { StaticQuery, graphql, Link } from "gatsby"
 import Bio from "./Bio"
 import "./sidebar.css"
 
-import SocialLinks from "./SocialLinks"
 import TechTags from "./TechTags"
 
 const Sidebar = () => {
