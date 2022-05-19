@@ -32,12 +32,12 @@
   color: white;
 }
 .head-logo {
-  font-family: "Raleway";
+  /* font-family: "Raleway"; */
   font-size: 1.75rem;
 }
 
 small {
-    font-family: "Raleway";
+    /* font-family: "Raleway"; */
 }
 
 .mobile-bio-main {

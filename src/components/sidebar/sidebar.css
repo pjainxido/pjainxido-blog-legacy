@@ -10,7 +10,7 @@
 .page-links {
     margin-top: 3rem;
     padding-top: 4rem;
-    font-family: "Raleway";
+    /* font-family: "Raleway"; */
 }
 
 
@@ -20,7 +20,7 @@
 }
 
 small, h3, p {
-    font-family: 'Raleway';
+    /* font-family: 'Raleway'; */
     
 }
 
