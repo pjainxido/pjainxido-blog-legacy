@@ -4,7 +4,7 @@ import "./tags.css"
 import { Link } from "gatsby"
 
 const TechTag = props => {
-  const { tag, tech, name, size, color } = props
+  const { tag, tech, name, size, color, count } = props
 
   return (
     <div className="d-inline-block p-1">

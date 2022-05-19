@@ -62,7 +62,7 @@ const PostList = props => {
             const tags = post.node.frontmatter.tags
             return (
               <div key={post.node.id} className="container mt-5">
-                <Link to={post.node.fields.slug} className="text-dark">
+                <Link to={post.node.fields.slug}>
                   <h2 className="title">{post.node.frontmatter.title}</h2>
                 </Link>
                 <small className="d-block text-info">

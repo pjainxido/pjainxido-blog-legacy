@@ -22,15 +22,14 @@
 
 .bottom-bar {
   width: 100%;
-  background: black;
   display: none;
   flex-direction: row;
   justify-content: space-around;
 }
 .mobile-pages-main {
   width: 100%;
-  background: white;
   display: none;
+  color: white;
 }
 .head-logo {
   font-family: "Raleway";

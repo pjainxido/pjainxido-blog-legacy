@@ -21,10 +21,10 @@ const CustomShareBlock = props => {
   }
   return (
     <div className="mt-4">
-      <ShareBlockStandard {...shareBlockProps} />
       <p className="text-center">
-        <i>If you like it, share it!</i>
+        <i>Share this post</i>
       </p>
+      <ShareBlockStandard {...shareBlockProps} />
     </div>
   )
 }

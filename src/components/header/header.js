@@ -13,7 +13,8 @@ const Header = ({ siteTitle, tagline, author, contacts }) => {
     <header
       className="head-main"
       style={{
-        background: `black`,
+        backgroundColor: "#F4D03F",
+        backgroundImage: "linear-gradient(132deg, #F4D03F 0%, #16A085 100%)",
       }}
     >
       <div

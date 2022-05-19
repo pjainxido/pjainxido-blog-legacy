@@ -2,10 +2,7 @@ import React from "react"
 
 import TechTag from "../tags/TechTag"
 
-const TechTags = props => {
-  const labels = props.labels
-  const posts = props.posts
-
+const TechTags = ({ labels, posts }) => {
   const labelCount = labels.map(label => {
     let count = 0
     posts.forEach(post => {

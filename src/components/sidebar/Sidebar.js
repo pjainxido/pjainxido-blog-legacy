@@ -49,16 +49,13 @@ const Sidebar = () => {
             />
             <div className="page-links">
               <Link to="/">
-                <span className="text-dark d-block py-1">Blog Home</span>
-              </Link>
-              <Link to="/about">
-                <span className="text-dark d-block py-1">About</span>
+                <span className="d-block py-1 link-dark">Blog Home</span>
               </Link>
               <Link to="/projects">
-                <span className="text-dark d-block py-1">Projects</span>
+                <span className="d-block py-1 link-dark">Projects</span>
               </Link>
               <Link to="/archive">
-                <span className="text-dark d-block py-1">Archive</span>
+                <span className="d-block py-1 link-dark">Archive</span>
               </Link>
             </div>
             <div className="tech-tags mt-4">
