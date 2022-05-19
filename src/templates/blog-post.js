@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "./blog-post.css"
 
+import Comment from "./comment"
 import Sidebar from "../components/sidebar/Sidebar"
 import TechTag from "../components/tags/TechTag"
 import CustomShareBlock from "../components/CustomShareBlock"
@@ -55,6 +56,7 @@ const BlogPost = props => {
               <i>Published on </i> {post.frontmatter.date}
             </small>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <Comment repo="pjainxido/pjainxido.github.io" />
             <CustomShareBlock
               title={post.frontmatter.title}
               siteName={siteName}
@@ -62,14 +64,6 @@ const BlogPost = props => {
             />
           </div>
         </div>
-        <script
-          src="https://utteranc.es/client.js"
-          repo="pjainxido/comments"
-          issue-term="pathname"
-          theme="github-light"
-          crossorigin="anonymous"
-          async
-        ></script>
       </div>
     </Layout>
   )
