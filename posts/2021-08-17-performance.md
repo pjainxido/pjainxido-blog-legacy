@@ -2,7 +2,7 @@
 layout: post
 title: TIL - Performance check
 cover-img: /assets/img/path.jpg
-tags: [til, wecode, FE, js, web, console.time, performance]
+tags: [til, FE, js, web, console.time, performance]
 published: true
 date: "2021-08-17"
 ---

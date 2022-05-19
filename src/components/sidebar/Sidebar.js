@@ -16,9 +16,6 @@ const Sidebar = () => {
               title
               tagline
               author
-              contacts {
-                github
-              }
               labels {
                 tag
                 tech
@@ -50,7 +47,6 @@ const Sidebar = () => {
               author={data.site.siteMetadata.author}
               tagline={data.site.siteMetadata.tagline}
             />
-            <SocialLinks contacts={data.site.siteMetadata.contacts} />
             <div className="page-links">
               <Link to="/">
                 <span className="text-dark d-block py-1">Blog Home</span>
