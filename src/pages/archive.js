@@ -42,6 +42,7 @@ const ArchivePage = ({ data }) => {
           `gatsby`,
           `javascript`,
           `react`,
+          `frontend`,
           `web development`,
           `blog`,
           `graphql`,

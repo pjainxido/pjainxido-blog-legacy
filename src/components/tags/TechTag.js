@@ -10,8 +10,8 @@ const TechTag = props => {
     <div className="d-inline-block p-1">
       <Link to={`/tags/${tag}/`}>
         <button className="tech-tag text-white">
-          <p className="d-inline">{tech} </p>
-          <div className="d-inline" style={{ fontSize: size, color: color }}>
+          <p className="d-inline">{`#${tech}`} </p>
+          {/* <div className="d-inline" style={{ fontSize: size, color: color }}>
             <svg
               role="img"
               viewBox="0 0 24 24"
@@ -23,7 +23,7 @@ const TechTag = props => {
               <title>{tech}</title>
               <path d={name} />
             </svg>
-          </div>
+          </div> */}
         </button>
       </Link>
     </div>
