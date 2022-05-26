@@ -10,7 +10,7 @@ const TechTag = props => {
     <div className="d-inline-block p-1">
       <Link to={`/tags/${tag}/`}>
         <button className="tech-tag text-white">
-          <p className="d-inline">{`#${tag}`} </p>
+          <p className="d-inline">{`# ${tag}`} </p>
         </button>
       </Link>
     </div>
