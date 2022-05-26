@@ -2,11 +2,12 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import "bootstrap/dist/css/bootstrap.css"
 import "./index.css"
-import { getTimeDiff } from '../utils'
+import { getTimeDiff } from "../utils"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Sidebar from "../components/sidebar/Sidebar"
+import Tags from "../components/tags/Tags"
 import TechTag from "../components/tags/TechTag"
 
 const ArchivePage = ({ data }) => {
@@ -68,7 +69,9 @@ const ArchivePage = ({ data }) => {
                 <Link to={post.node.fields.slug} className="text-primary">
                   <small className="d-inline-block ml-3"> Read full post</small>
                 </Link>
-                <div className="d-block">{getTechTags(tags)}</div>
+                <div className="d-block">
+                  <Tags tags={tags} />
+                </div>
               </div>
             )
           })}

@@ -6,20 +6,16 @@ import "./blog-post.css"
 
 import Comment from "./comment"
 import Sidebar from "../components/sidebar/Sidebar"
-import TechTag from "../components/tags/TechTag"
+import Tags from "../components/tags/Tags"
 import CustomShareBlock from "../components/CustomShareBlock"
 
 const BlogPost = props => {
   const post = props.data.markdownRemark
-  const labels = props.data.site.siteMetadata.labels
   const siteName = props.data.site.siteMetadata.title
   const siteUrl = props.data.site.siteMetadata.url
   const url = `${siteUrl}${props.pageContext.slug}`
   const tags = post.frontmatter.tags
 
-  const getTechTags = tags => {
-    return tags.map((tag, i) => <TechTag key={i} tag={tag} />)
-  }
 
   return (
     <Layout>
@@ -33,7 +29,9 @@ const BlogPost = props => {
           <SEO title={post.frontmatter.title} />
           <div className="mt-3">
             <h2 className="heading">{post.frontmatter.title}</h2>
-            <div className="d-block">{getTechTags(tags)}</div>
+            <div className="d-block">
+              <Tags tags={tags} />
+            </div>
             <br />
             <small>
               <i>Published on </i> {post.frontmatter.date}

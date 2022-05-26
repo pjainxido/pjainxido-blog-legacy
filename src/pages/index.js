@@ -3,11 +3,11 @@ import { Link, graphql } from "gatsby"
 import "bootstrap/dist/css/bootstrap.css"
 import "./index.css"
 
-import { getTimeDiff } from '../utils'
+import { getTimeDiff } from "../utils"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Sidebar from "../components/sidebar/Sidebar"
-import TechTag from "../components/tags/TechTag"
+import Tags from "../components/tags/Tags"
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
@@ -15,10 +15,6 @@ const IndexPage = ({ data }) => {
   const postsPerPage = 10 // see limit in graphql query below
   const nextPage = "/" + (currentPage + 1).toString()
   const hasNextPage = data.allMarkdownRemark.totalCount > postsPerPage
-
-  const getTechTags = tags => {
-    return tags.map((tag, i) => <TechTag key={i} tag={tag} />)
-  }
 
   return (
     <Layout>
@@ -52,7 +48,9 @@ const IndexPage = ({ data }) => {
                 <Link to={post.node.fields.slug} className="text-primary">
                   <small className="d-inline-block ml-3"> Read full post</small>
                 </Link>
-                <div className="d-block">{getTechTags(tags)}</div>
+                <div className="d-block">
+                  <Tags tags={tags} />
+                </div>
               </div>
             )
           })}
@@ -85,7 +83,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      limit: 10 
+      limit: 10
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { published: { eq: true } } }
     ) {

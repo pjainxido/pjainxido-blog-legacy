@@ -7,37 +7,15 @@ import "../pages/index.css"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Sidebar from "../components/sidebar/Sidebar"
-import TechTag from "../components/tags/TechTag"
+import Tags from "../components/tags/Tags"
 
 const Tag = ({ pageContext, data }) => {
   const posts = data.allMarkdownRemark.edges
-  const labels = data.site.siteMetadata.labels
   const { tag } = pageContext
   const { totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
-
-  const getTechTags = tags => {
-    const techTags = []
-    tags.forEach((tag, i) => {
-      labels.forEach(label => {
-        if (tag === label.tag) {
-          techTags.push(
-            <TechTag
-              key={i}
-              tag={label.tag}
-              tech={label.tech}
-              name={label.name}
-              size={label.size}
-              color={label.color}
-            />
-          )
-        }
-      })
-    })
-    return techTags
-  }
 
   return (
     <Layout>
@@ -76,7 +54,9 @@ const Tag = ({ pageContext, data }) => {
                 <Link to={post.node.fields.slug} className="text-primary">
                   <small className="d-inline-block ml-3"> Read full post</small>
                 </Link>
-                <div className="d-block">{getTechTags(tags)}</div>
+                <div className="d-block">
+                  <Tags tags={tags} />
+                </div>
               </div>
             )
           })}
