@@ -49,6 +49,7 @@ const Tag = ({ pageContext, data }) => {
           `react`,
           `web development`,
           `node.js`,
+          `frontend`,
           `graphql`,
         ]}
       />
