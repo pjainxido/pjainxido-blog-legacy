@@ -11,14 +11,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
-.social-links {
+.left-links {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+  gap: 20px;
 }
-
 
 .bottom-bar {
   width: 100%;
@@ -37,20 +39,22 @@
 }
 
 small {
-    /* font-family: "Raleway"; */
+  /* font-family: "Raleway"; */
 }
 
 .mobile-bio-main {
   display: none;
 }
 
-
-
 @media only screen and (max-width: 850px) {
-  .bottom-bar{display: flex;}
-  .social-links{display: none;}
-  .mobile-pages-main{display: block;}
-  .mobile-bio-main{
+  .bottom-bar {
+    display: flex;
+  }
+  /* .social-links{display: none;} */
+  .mobile-pages-main {
+    display: block;
+  }
+  .mobile-bio-main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

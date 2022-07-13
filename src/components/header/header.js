@@ -2,10 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
-import MobileSocialLinks from "./MobileSocialLinks"
-import MobilePageLinks from "./MobilePageLinks"
-import SocialLinks from "./SocialLinks"
-import MobileBio from "./MobileBio"
+import Links from "./Links"
 import "./header.css"
 
 const Header = ({ siteTitle, tagline, author, contacts }) => {
@@ -14,7 +11,8 @@ const Header = ({ siteTitle, tagline, author, contacts }) => {
       className="head-main"
       style={{
         backgroundColor: "#F4D03F",
-        backgroundImage: "linear-gradient(170deg, rgb(244, 208, 63) 0%, rgb(22, 160, 133) 100%)",
+        backgroundImage:
+          "linear-gradient(170deg, rgb(244, 208, 63) 0%, rgb(22, 160, 133) 100%)",
       }}
     >
       <div
@@ -35,11 +33,8 @@ const Header = ({ siteTitle, tagline, author, contacts }) => {
             {siteTitle}
           </Link>
         </h1>
-        <SocialLinks contacts={contacts} />
+        <Links contacts={contacts} />
       </div>
-      <MobileSocialLinks contacts={contacts} />
-      <MobilePageLinks />
-      {/* <MobileBio author={author} /> */}
     </header>
   )
 }
